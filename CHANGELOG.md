@@ -2,6 +2,11 @@
 
 All notable changes to the agent. Versioning: [SemVer](https://semver.org) — MAJOR breaks the data schema or methodology, MINOR adds a capability, PATCH fixes. Entries describe rules, never athlete data.
 
+## [2.0.2] — 2026-11-03
+
+### Fixed
+- Pre-commit hook finds Python on Windows (`python3`, `python` or `py`) and blocks the commit if no Python 3 is available, instead of failing open.
+
 ## [2.0.1] — 2026-11-03
 
 ### Fixed

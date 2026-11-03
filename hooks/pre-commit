@@ -1,7 +1,14 @@
 #!/bin/sh
 # Privacy guard for a public repository. Enable once per clone:
 #   git config core.hooksPath hooks
-python3 "$(git rev-parse --show-toplevel)/scripts/privacy_check.py" --staged || {
-  echo "Commit blocked: personal data detected. See docs/athlete-data-spec.md."
-  exit 1
-}
+# Works with Git for Windows (python or py launcher) as well as Linux/macOS (python3).
+ROOT="$(git rev-parse --show-toplevel)"
+for PY in python3 python py; do
+  if command -v "$PY" >/dev/null 2>&1 && "$PY" -c "import sys; sys.exit(0 if sys.version_info >= (3, 8) else 1)" >/dev/null 2>&1; then
+    "$PY" "$ROOT/scripts/privacy_check.py" --staged && exit 0
+    echo "Commit blocked: personal data detected. See docs/athlete-data-spec.md."
+    exit 1
+  fi
+done
+echo "Commit blocked: Python 3 not found, so the privacy check could not run."
+exit 1
