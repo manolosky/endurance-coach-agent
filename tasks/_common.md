@@ -4,7 +4,7 @@ Every scheduled task starts in a fresh session with no memory. Before its own st
 
 ## 1. Load the agent and the athlete
 
-With the **Projects** tool (project docs use path prefixes `agent/` and `athlete/`):
+With the **Projects** tool (`project_info` to list docs, `project_read` to read, `project_write` with `local_path` to write) (project docs use path prefixes `agent/` and `athlete/`):
 
 1. Read `agent/README.md`, `agent/VERSION` and the task file it was told to run.
 2. Read `athlete/settings.yaml` and `athlete/zones.yaml`. If either is missing, stop and notify (in English): "athlete/ is not initialised — run onboarding/first-run.md".
@@ -14,7 +14,7 @@ If the Projects tool or a required connector (COROS, Strava; load them with Tool
 
 ## 2. Materialise the scripts
 
-Copy every Project doc whose path starts with `agent/scripts/` into the working directory, keeping the relative path (`agent/scripts/coach/metrics.py` → `./scripts/coach/metrics.py`). Copy the athlete files the task needs into `./athlete/` the same way (`athlete/data/sessions.csv` → `./athlete/data/sessions.csv`, `athlete/zones.yaml`, `athlete/settings.yaml`). Install `pyyaml` if missing (`pip install --break-system-packages pyyaml`). All calculations go through these scripts, never ad-hoc code, so every run applies identical formulas.
+Copy every Project doc whose path starts with `agent/scripts/` into the working directory, keeping the relative path (`agent/scripts/coach/metrics.py` → `./scripts/coach/metrics.py`). Copy `athlete/settings.yaml`, `athlete/zones.yaml` and **all eight** `athlete/data/*.csv` into `./athlete/` the same way (validation needs every file). Install `pyyaml` if missing (`pip install --break-system-packages pyyaml`). All calculations go through these scripts, never ad-hoc code, so every run applies identical formulas.
 
 ## 3. Language
 
