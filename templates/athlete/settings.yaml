@@ -1,0 +1,11 @@
+# Athlete settings. This file lives only in athlete/ (never in git).
+language: en              # athlete-facing output: en | es (asked on first run)
+timezone: UTC             # IANA name, e.g. Europe/Madrid
+units: metric
+connectors:
+  coros: false
+  strava: false
+obsidian:
+  vault_path: ""          # absolute path on the athlete's computer; empty = no vault
+privacy:
+  blocklist: []           # names, IDs, places, paths that must never appear in the repo

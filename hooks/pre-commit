@@ -1,0 +1,7 @@
+#!/bin/sh
+# Privacy guard for a public repository. Enable once per clone:
+#   git config core.hooksPath hooks
+python3 "$(git rev-parse --show-toplevel)/scripts/privacy_check.py" --staged || {
+  echo "Commit blocked: personal data detected. See docs/athlete-data-spec.md."
+  exit 1
+}

@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------
+# PRIVACY: athlete data never enters this repository.
+# Like node_modules, athlete/ is created locally (scripts/init_athlete.py)
+# and lives only in the athlete's own environment (Claude Project, laptop).
+# Spec: docs/athlete-data-spec.md
+# ---------------------------------------------------------------
+/athlete/
+/athlete-*/
+*.fit
+*.tcx
+*.gpx
+/exports/
+/reports/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local scratch (task working files)
+/work/
