@@ -1,0 +1,12 @@
+# Current thresholds used by every calculation. Bump `version` on every change.
+version: 1970-01-01
+hr_max_bpm: null
+run:
+  z1_cap_bpm: null        # LT1 proxy (top of Z1)
+  lthr_bpm: null          # LT2 proxy (Z2/Z3 split and hrTSS)
+  cp_w: null              # Stryd critical power
+  threshold_pace_s_km: null
+bike:
+  z1_cap_bpm: null
+  lthr_bpm: null
+provisional: []           # dotted keys of values not yet confirmed by a test

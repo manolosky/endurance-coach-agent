@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------
+# PRIVACY: athlete data never enters this repository.
+# Like node_modules, athlete/ is created locally (scripts/init_athlete.py)
+# and lives only in the athlete's own environment (Claude Project, laptop).
+# Spec: docs/athlete-data-spec.md
+# ---------------------------------------------------------------
+/athlete/
+/athlete-*/
+*.fit
+*.tcx
+*.gpx
+*.fit.gz
+*.tcx.gz
+*.gpx.gz
+/exports/
+/reports/
+
+# ---------------------------------------------------------------
+# SECURITY: credentials and connector configuration never enter
+# this repository. Connectors authenticate through OAuth in Claude.
+# ---------------------------------------------------------------
+.env
+.env.*
+.mcp.json
+.claude/
+claude_desktop_config.json
+credentials*.json
+token*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+.netrc
+.npmrc
+.pypirc
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local scratch (task working files)
+/work/
+/smoke/
